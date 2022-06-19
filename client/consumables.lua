@@ -197,6 +197,12 @@ RegisterNetEvent('consumables:client:DrinkAlcohol', function(itemName)
     end)
 end)
 
+RegisterNetEvent('consumables:client:GetAlcohol', function(ID1)
+    data = {ID = ID1, drunken = alcoholCount}
+    --print(data.ID)
+    TriggerServerEvent('Andyyy:BACReturn', data)
+end)
+
 RegisterNetEvent('consumables:client:Cokebaggy', function()
     local ped = PlayerPedId()
     QBCore.Functions.Progressbar("snort_coke", "Quick sniff..", math.random(5000, 8000), false, true, {
